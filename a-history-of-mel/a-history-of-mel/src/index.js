@@ -5,6 +5,8 @@ import colors from './css-colors';
 
 import './styles.css';
 
+import melPicOne from './images/IMG_0484.JPG';
+
 function FadeInSection(props) {
   const [isVisible, setVisible] = useState(false);
   const domRef = useRef();
@@ -31,8 +33,10 @@ function App() {
 
       {colors.map(color => (
         <FadeInSection key={color}>
-          <div className="box" style={{ backgroundColor: color }}>
-            <span>{color}</span>
+          <div className="box" style={{ backgroundColor: color, padding: 100, margin: 100 }}>
+            <span>
+              <img src={melPicOne} alt="" style={{width: 500, height: 683}}/>
+            </span>
           </div>
         </FadeInSection>
       ))}
