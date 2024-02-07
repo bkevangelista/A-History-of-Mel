@@ -8,25 +8,11 @@ function MessageCard(props) {
     const renderCardImages = (card) => {
         let images = [];
         card.image.forEach(i => {
-            if (i.slice(-4).toLowerCase().includes(".mov")) {
-                images.push(
-                    <div>
-                        <video width="100%" height="100%" src={i} controls/>
-                        <br />
-                    </div>
-                )
-            } else {
-                images.push(
-                    <Card.Img variant="top" src={i} style={{width: 400, height: 533}} />
-                )
-            }
-        }
+            images.push(
+                <Card.Img variant="top" src={i} style={{width: 400, height: 533}} />
+            )}
         );
-        return (
-            <div>
-                {images}
-            </div>
-        )
+        return (<div>{images}</div>)
     }
     const renderMessage = (card) => {
         let text = [];
@@ -38,15 +24,11 @@ function MessageCard(props) {
                 </div>
             )
         );
-        return (
-            <div>
-                {text}
-            </div>
-        )
+        return (<div>{text}</div>)
     }
     const renderCards = (card) => {
         return (
-            <Card className="box" >
+            <Card className="boxCard" >
                 <Card.Body>
                     <Card.Title>{card.title}</Card.Title>
                     {renderMessage(card)}

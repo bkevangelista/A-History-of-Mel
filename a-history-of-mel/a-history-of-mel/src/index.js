@@ -1,12 +1,10 @@
 import React from 'react';
-import { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import  MessageCard from '../src/MessageCard';
-
-import './styles.css';
-import './Box.css';
+import FadeInSection from './FadeInSection';
 
 import melPicOne from './images/IMG_0484.JPG';
+import './index.css'
 
 const cardInfo = [
   {
@@ -14,7 +12,7 @@ const cardInfo = [
         melPicOne
     ],
     title: "To the light of my life",
-    description: []
+    description: ["test"]
   },
   {
     image: [
@@ -95,32 +93,13 @@ const cardInfo = [
   },
 ]
 
-function FadeInSection(props) {
-  const [isVisible, setVisible] = useState(false);
-  const domRef = useRef();
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => setVisible(entry.isIntersecting));
-    });
-    observer.observe(domRef.current);
-  }, []);
-  return (
-    <div
-      className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
-      ref={domRef}
-    >
-      {props.children}
-    </div>
-  );
-}
-
 function App() {
   return (
     <div className="App">
       <h1>Happy Birthday Melinda!</h1>
 
       {cardInfo.map(card => (
-        <FadeInSection >
+        <FadeInSection>
           <div style={{ margin: 100, backgroundColor: 'white' }}>
               <MessageCard cardInfo={card} />
           </div>
