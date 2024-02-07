@@ -1,0 +1,15 @@
+.box {
+  margin: 20px;
+}
+
+.black-background {
+  background-color: red !important;
+  font-size: 5vh;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.box Img {
+  padding: 2rem 2rem 2rem 2rem;
+  width: "400px";
+  height: "533px";
+}
